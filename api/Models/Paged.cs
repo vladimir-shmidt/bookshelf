@@ -7,7 +7,7 @@ namespace bookshelf.Models
     {
         public IEnumerable<T> Data { get; set; }
 
-        public int Count { get; set; }
+        public int Total { get; set; }
         public int Page { get; set; }
     }
 }
