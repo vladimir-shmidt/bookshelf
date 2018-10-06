@@ -16,8 +16,8 @@ namespace bookshelf
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
             services.AddCors();
+            services.AddMvc();
 
             services.AddSingleton<IBookRepository, BookRepository>();
         }
@@ -30,8 +30,8 @@ namespace bookshelf
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(_ => _.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseMvc(_ => _.MapRoute("defaut", "{controller}/{action}/{id?}"));
-            app.UseCors(_ => _.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials());
         }
     }
 }
