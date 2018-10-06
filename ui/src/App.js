@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Books from './BooksComponent/Books';
 import './App.css';
+import Popup from './RequestProgress/Popup'
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
         <Router>
           <Route exact path="/" component={Books} />
         </Router>
+        <Popup/>
       </div>
       
     );

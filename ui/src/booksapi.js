@@ -6,7 +6,7 @@ class BooksAPI {
     }
 
     catchError(e) {
-        State.Request.Error = e;
+        State.Request.Error = JSON.stringify(e);
         State.Request.InProgress = false;
     }
 
@@ -38,3 +38,5 @@ class BooksAPI {
                 .catch(this.catchError);
     }
 }
+
+export default BooksAPI;
