@@ -1,14 +1,18 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using bookshelf.Models;
 
 namespace bookshelf.Services 
 {
     public interface IBookRepository
     {
-        Book GetById(int id);
+        Task<Book> GetById(int id);
         
-        IEnumerable<Book> GetBooks(int page, int count);
+        Task<IEnumerable<Book>> GetBooks(int page, int count);
 
-        int Count();
+        Task<int> Count();
+        Task Update(Book book);
+        Task<int> Add(Book book);
+        Task Remove(int id);
     }
 }

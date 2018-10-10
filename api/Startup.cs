@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using bookshelf.Services;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace bookshelf
 {
@@ -17,8 +19,14 @@ namespace bookshelf
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            services.AddMvc();
-
+            services
+                .AddMvc()
+                .AddJsonOptions(options => {
+                    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                    options.SerializerSettings.Formatting = Formatting.Indented;
+                    options.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
+                }
+            );
             services.AddSingleton<IBookRepository, BookRepository>();
         }
 

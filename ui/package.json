@@ -7,8 +7,10 @@
     "mobx": "^5.5.0",
     "mobx-react": "^5.2.8",
     "react": "^16.5.2",
-    "react-bootstrap-table": "^4.3.1",
+    "react-bootstrap-table-next": "^1.2.1",
+    "react-bootstrap-table2-paginator": "^1.0.3",
     "react-dom": "^16.5.2",
+    "react-icons": "^3.1.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4",
     "reactstrap": "^6.5.0"
