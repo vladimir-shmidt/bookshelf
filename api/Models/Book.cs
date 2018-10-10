@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace bookshelf.Models 
 {
@@ -12,7 +13,7 @@ namespace bookshelf.Models
         public string Title { get; set; }
 
         [Required]
-        public Author Author { get; set; }
+        public IEnumerable<Author> Authors { get; set; }
 
         [Range(0, 10000)]
         public int PageCount { get; set; }

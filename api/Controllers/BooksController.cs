@@ -25,9 +25,9 @@ namespace bookshelf.Controllers
         public async Task<Paged<Book>> Find([FromQuery]int page, [FromQuery]int count)
         {
             var result = new Paged<Book>();
-            result.Data = _repository.GetBooks(page, count);
+            result.Data = _repository.GetBooks(page - 1, count);
             result.Total = _repository.Count();
-            result.Page = page;
+            result.Page = page - 1;
             return result;
         }
     }
